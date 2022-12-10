@@ -132,7 +132,7 @@ const optionChange=(e)=>{
     setMain(false);
     setAssend(true);
     setAss(a);
-    // console.log(a);
+   
   }
   if(e.target.value==='2'){
     const a=dataTable.sort((a, b) => b.first_name.localeCompare(a.first_name))
@@ -140,23 +140,16 @@ const optionChange=(e)=>{
     setMain(false);
     setDesend(true);
     setAss(a);
-    // console.log(a);
-  }
-  // if(e.target.value==='0'){
    
-  //   setAssend(false);
-  //   setDesend(false);
-  //   setMain(true);
-  //   setAss(dataTable);
-  //   // console.log(a);
-  // }
+  }
+
  else{
    
     setAssend(false);
     setDesend(false);
     setMain(true);
     setAss(dataTable);
-    // console.log(a);
+    
   }
 
 
@@ -165,11 +158,9 @@ const optionChange=(e)=>{
 
 }
 
-console.log(ass);
-console.log(assend);
-console.log(desend);
+
   return (
-    <div   className="overflow-x-auto text-white">
+    <div   className="overflow-x-auto text-white max-w-[1440px] mx-auto">
       
      
     <table className="table table-compact w-full">
