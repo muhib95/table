@@ -122,6 +122,7 @@ const [assend,setAssend]=useState(false);
 const [desend,setDesend]=useState(false);
 const [main,setMain]=useState(true);
 
+
 const optionChange=(e)=>{
   console.log(e);
   setAss([]);
@@ -169,26 +170,14 @@ console.log(assend);
 console.log(desend);
   return (
     <div   className="overflow-x-auto text-white">
-        {/* id:7,
-    first_name:'Berti',
-    last_name:'Coldbath',
-    email:'bcoldbath6@un.org',
-    gender:'Male',
-    ip_address:'130.30.122.132',
-    airport_code:'PHK	',
-    time:'6/8/2022',
-    status:'TRUE',
-    mobile:'292-925-7639',
-    area:'5167 Surrey Junction',
-    show:'TRUE',
-    edit:'TRUE' */}
+      
      
     <table className="table table-compact w-full">
   <thead>
     <tr>
       <th>
       First Name
-<select  onChange={e=>optionChange(e)}>
+<select className='p-2 ml-1'  onChange={e=>optionChange(e)}>
 
   <option defaultChecked='0' >unsort</option>
   <option value='1'>SORT BY ASC</option>
@@ -214,7 +203,7 @@ console.log(desend);
   assend &&
   <>
      {
-        ass.map(dataT=>  <tr key={dataT.id}>
+        ass.map(dataT=>  <tr key={dataT.id} className='hover'>
           <td>{dataT.first_name}
  
           
@@ -248,7 +237,7 @@ console.log(desend);
   desend &&
   <>
      {
-        ass.map(dataT=>  <tr key={dataT.id}>
+        ass.map(dataT=>  <tr key={dataT.id} className='hover'>
           <td>{dataT.first_name}
  
           
@@ -282,7 +271,7 @@ console.log(desend);
       main &&
       <>
       {
-        dataTable.map(dataT=>  <tr key={dataT.id}>
+        dataTable.map(dataT=>  <tr  className='hover' key={dataT.id}>
           <td >{dataT.first_name}
           </td>
           <td>{dataT.last_name}</td>
