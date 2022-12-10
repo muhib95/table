@@ -121,7 +121,9 @@ const [ass,setAss]=useState([]);
 const [assend,setAssend]=useState(false);
 const [desend,setDesend]=useState(false);
 const [main,setMain]=useState(true);
+
 const optionChange=(e)=>{
+  console.log(e);
   setAss([]);
   if(e.target.value==='1'){
     const a=dataTable.sort((a, b) => a.first_name.localeCompare(b.first_name))
@@ -166,20 +168,45 @@ console.log(ass);
 console.log(assend);
 console.log(desend);
   return (
-    <div >
+    <div   className="overflow-x-auto text-white">
+        {/* id:7,
+    first_name:'Berti',
+    last_name:'Coldbath',
+    email:'bcoldbath6@un.org',
+    gender:'Male',
+    ip_address:'130.30.122.132',
+    airport_code:'PHK	',
+    time:'6/8/2022',
+    status:'TRUE',
+    mobile:'292-925-7639',
+    area:'5167 Surrey Junction',
+    show:'TRUE',
+    edit:'TRUE' */}
      
-    <table className="table-auto">
+    <table className="table table-compact w-full">
   <thead>
     <tr>
-      <th>first_name
-      <select onChange={e=>optionChange(e)}>
+      <th>
+      First Name
+<select  onChange={e=>optionChange(e)}>
+
   <option defaultChecked='0' >unsort</option>
-  <option value='1'>ASO</option>
-  <option value='2'>DSO</option>
+  <option value='1'>SORT BY ASC</option>
+  <option value='2'>Sort BY DSC</option>
 </select>
+  
       </th>
-      <th>Artist</th>
-      <th>Year</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>gender</th>
+      <th>ip_address</th>
+      <th>airport_code</th>
+      <th>time</th>
+      <th>status</th>
+      <th>mobile</th>
+      <th>area</th>
+      <th>show</th>
+      <th>edit</th>
     </tr>
   </thead>
   <tbody>
@@ -198,7 +225,13 @@ console.log(desend);
           <td>{dataT.ip_address}</td>
           <td>{dataT.airport_code}</td>
           <td>{dataT.time}</td>
-          <td>{dataT.status}</td>
+          {
+            dataT.status==='TRUE' ?
+            <td className='bg-lime-500'>{dataT.status}</td>
+            :
+            <td className='bg-red-600'>{dataT.status}</td>
+          }
+          {/* <td>{dataT.status}</td> */}
           <td>{dataT.mobile}</td>
           <td>{dataT.area}</td>
           <td>{dataT.show}</td>
@@ -226,7 +259,13 @@ console.log(desend);
           <td>{dataT.ip_address}</td>
           <td>{dataT.airport_code}</td>
           <td>{dataT.time}</td>
-          <td>{dataT.status}</td>
+          {
+            dataT.status==='TRUE' ?
+            <td className='bg-lime-500'>{dataT.status}</td>
+            :
+            <td className='bg-red-600'>{dataT.status}</td>
+          }
+          {/* <td>{dataT.status}</td> */}
           <td>{dataT.mobile}</td>
           <td>{dataT.area}</td>
           <td>{dataT.show}</td>
@@ -244,9 +283,7 @@ console.log(desend);
       <>
       {
         dataTable.map(dataT=>  <tr key={dataT.id}>
-          <td>{dataT.first_name}
- 
-          
+          <td >{dataT.first_name}
           </td>
           <td>{dataT.last_name}</td>
           <td>{dataT.email}</td>
@@ -254,7 +291,13 @@ console.log(desend);
           <td>{dataT.ip_address}</td>
           <td>{dataT.airport_code}</td>
           <td>{dataT.time}</td>
-          <td>{dataT.status}</td>
+          {
+            dataT.status==='TRUE' ?
+            <td className='bg-lime-500'>{dataT.status}</td>
+            :
+            <td className='bg-red-600'>{dataT.status}</td>
+          }
+          {/* <td>{dataT.status}</td> */}
           <td>{dataT.mobile}</td>
           <td>{dataT.area}</td>
           <td>{dataT.show}</td>
